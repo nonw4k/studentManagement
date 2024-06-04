@@ -1,11 +1,11 @@
+// src/app/home/home.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
+import { IonicModule } from '@ionic/angular';
 
 import { HomePageRoutingModule } from './home-routing.module';
-
+import { HomePage } from './home.page';
 
 @NgModule({
   imports: [
@@ -17,3 +17,4 @@ import { HomePageRoutingModule } from './home-routing.module';
   declarations: [HomePage]
 })
 export class HomePageModule {}
+

@@ -1,0 +1,30 @@
+<!-- src/app/student-detail/student-detail.page.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Detalles del Alumno
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="student">
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-text>{{ student.nombre }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Matrícula</ion-label>
+      <ion-text>{{ student.matricula }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Calificación</ion-label>
+      <ion-text>{{ student.calificacion }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Dirección</ion-label>
+      <ion-text>{{ student.direccion }}</ion-text>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="goBack()">Volver</ion-button>
+</ion-content>

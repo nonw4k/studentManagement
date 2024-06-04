@@ -1,16 +1,27 @@
+// src/app/app-routing.module.ts
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+  },
+  {
+    path: 'student-detail/:matricula',
+    loadChildren: () => import('./student-detail/student-detail.module').then(m => m.StudentDetailPageModule)
+  }
+];
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-  bootstrap: [AppComponent],
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+  exports: [RouterModule]
 })
-export class AppModule {}
+export class AppRoutingModule {}
