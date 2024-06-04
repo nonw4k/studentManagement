@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'student-detail/:matricula',
     loadChildren: () => import('./student-detail/student-detail.module').then( m => m.StudentDetailPageModule)
+  },
+  {
+    path: 'asd',
+    loadChildren: () => import('./asd/asd.module').then( m => m.AsdPageModule)
   }
 ];
 
